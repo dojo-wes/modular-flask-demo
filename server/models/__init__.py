@@ -1,1 +1,1 @@
-print("this is coming from models", app)
+__all__ = ['activity', 'location', 'user']

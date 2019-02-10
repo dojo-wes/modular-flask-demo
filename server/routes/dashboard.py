@@ -1,5 +1,4 @@
-from server import app
+from server.config import app
 from server.controllers import dashboard
 
-app.add_url_rule('/', 'index', dashboard.index)
-app.add_url_rule('/other', 'other', dashboard.other)
+app.add_url_rule('/', 'dashboard:index', dashboard.index)

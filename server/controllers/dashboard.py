@@ -1,8 +1,6 @@
-from flask import render_template, redirect, session, request, flash
+from flask import render_template, redirect, session, url_for
 
 def index():
-    print('INDEX RUNNING')
-    return render_template('index.html')
-
-def other():
-    return "Other!"
+    if 'user_id' not in session:
+        return redirect(url_for('users:new'))
+    return render_template('dashboard/index.html')
